@@ -6,12 +6,15 @@ const model = require("./models/scores");
 const ScoresRouter = require("./routes/ScoresRouter");
 const listEndpoints = require("express-list-endpoints");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 app.use(
   bodyParser.json({
     limit: "20mb",
   })
 );
+
+app.use(cors());
 
 app.use(
   bodyParser.urlencoded({
